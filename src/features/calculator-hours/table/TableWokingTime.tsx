@@ -1,11 +1,12 @@
 import { Space, Table, Tag } from "antd";
 import type { TableProps } from "antd";
-import { TableComponentProps } from "../../types/components.types";
-import ButtonComponent from "../ButtonComponent";
-import { WorkingTimeInfo } from "../../types/working-info.models";
+import { TableComponentProps } from "../../../types/components.types";
+import ButtonComponent from "../../../components/ButtonComponent";
+import { WorkingTimeInfo } from "../../../types/working-info.models";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import FooterTableWorkingTime from "./FooterTableWokingTime";
 
-const TableComponent = ({ dataSource }: TableComponentProps) => {
+const TableWorkingTime = ({ dataSource, dataFooterTable }: TableComponentProps) => {
 
   // ESTAS FUNCIONES PUEDEN SER MANDADAS COMO PROPS
   const handleClickDelete = (record: WorkingTimeInfo) => {
@@ -75,7 +76,7 @@ const TableComponent = ({ dataSource }: TableComponentProps) => {
     },
   ];
 
-  return <Table<WorkingTimeInfo> columns={columns} dataSource={dataSource} />;
+  return <Table<WorkingTimeInfo> columns={columns} dataSource={dataSource} footer={() => <FooterTableWorkingTime data={dataFooterTable}/>}/>;
 };
 
-export default TableComponent;
+export default TableWorkingTime;
