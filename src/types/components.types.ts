@@ -4,4 +4,5 @@ export interface TableComponentProps {
     dataType?: any;
     columns?: TableProps<any>["columns"];
     dataSource: any;
+    dataFooterTable: any;
 }
