@@ -1,1 +1,1 @@
-export { default as CalculatorHoursForm } from './calculatorHoursForm';
+export { default as CalculatorHoursForm } from './CalculatorHoursForm';

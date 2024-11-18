@@ -35,25 +35,3 @@ const InputForm = ({
 };
 
 export default InputForm;
-
-// InputForm.tsx
-// import { Input } from "antd";
-// import { ErrorMessage } from "formik";
-// import InputFormProps from "../types/PropsComponetsTypes";
-
-// const InputForm = ({
-//   field,
-//   form: { touched, errors },
-//   ...props
-// }: InputFormProps) => {
-//   const errorMsg = touched[field.name] && errors[field.name];
-
-//   return (
-//     <div>
-//       <Input {...field} {...props} status={errorMsg ? "error" : ""} />
-//       <ErrorMessage name={props.name} component="div" className="text-red-500" />
-//     </div>
-//   );
-// };
-
-// export default InputForm;

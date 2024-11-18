@@ -5,20 +5,21 @@ import { validationSchema } from "./validationSchemaCalculator";
 import { Checkbox } from "antd";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import { useState } from "react";
+import { WorkingTimeInfo } from "../../types/working-info.models";
 
-const CalculatorHoursForm = () => {
+type FormWorkingTimeProps = { 
+  hanbleSubmitForm: (data: WorkingTimeInfo) => any
+}
+
+const CalculatorHoursForm = ({hanbleSubmitForm}: FormWorkingTimeProps) => {
   const [isRequiredField, setIsRequiredField] = useState<boolean>(true);
 
-  const initialValues = {
+  const initialValues: WorkingTimeInfo = {
     jobStartTime: "",
     lunchStartTime: "",
     lunchEndTime: "",
     jobEndTime: "",
     isLunchBreakRequired: true, // Agregado a los valores iniciales
-  };
-
-  const handleSubmit = (values: any) => {
-    console.log("Form submitted:", values);
   };
 
   // Manejo del cambio en el checkbox
@@ -34,7 +35,7 @@ const CalculatorHoursForm = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={handleSubmit}
+      onSubmit={hanbleSubmitForm}
     >
       {({ values, setFieldValue }) => (
         <Form className="space-y-4">
